@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vatio: te lo recomienda tu comercio de electricidad</title>
+<link rel="icon" href="../icono.png">
+<link rel="stylesheet" href="../estilo.css">
+<script>
+var VOS = /^es-(AR|UY|PY)$/i.test(navigator.language || "");
+function T(vos, tu) { return VOS ? vos : tu; }
+document.addEventListener("DOMContentLoaded", function () {
+  if (VOS) return;
+  document.querySelectorAll("[data-tu]").forEach(function (e) {
+    e.innerHTML = e.getAttribute("data-tu");
+  });
+});
+</script>
+</head>
+<body>
+<main>
+<div class="marca"><img src="../icono.png" alt="">VATIO</div>
+<div class="de">de <a href="../../">Vectrix Labs</a></div>
+
+<h1 data-tu="Te lo recomienda tu tienda de material eléctrico">Te lo recomienda
+tu casa de electricidad</h1>
+<p id="texto">Abriendo la tienda…</p>
+<div id="caja" class="codigo oculto">
+  <span>Tu código de recomendación</span>
+  <b id="codigo"></b>
+  <button class="boton" id="copiar" type="button">Copiar código</button>
+  <p id="instruccion" data-tu="Después de instalar Vatio, abre la pantalla
+  &lt;strong&gt;Pro&lt;/strong&gt; e ingrésalo en &quot;¿Te recomendó Vatio una tienda de
+  material eléctrico?&quot;.">Después de instalar Vatio, abrí la pantalla
+  <strong>Pro</strong> y cargalo en "¿Te recomendó Vatio una casa de
+  electricidad?".</p>
+</div>
+<div id="tiendas" class="oculto"><div class="botones"><a class="boton" href="https://play.google.com/store/apps/details?id=ar.vatio.app">Descargar en Google Play</a><span class="boton secundario">App Store: muy pronto</span></div></div>
+<script>
+(function () {
+  var PLAY = "https://play.google.com/store/apps/details?id=ar.vatio.app";
+  var APPLE = "";
+  var crudo = (new URLSearchParams(location.search).get("c") || "")
+      .trim().toUpperCase().replace(/\s+/g, "");
+  var valido = crudo.length >= 4 && crudo.length <= 20 &&
+      /[A-Z]/.test(crudo) && /^[A-Z0-9]+(-[A-Z0-9]+)*$/.test(crudo);
+  var codigo = valido ? crudo : "";
+  var ua = navigator.userAgent || "";
+  var esAndroid = /Android/i.test(ua);
+  var esIphone = /iPhone|iPad|iPod/i.test(ua) ||
+      (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+  var mostrar = function (id) { document.getElementById(id).classList.remove("oculto"); };
+
+  if (esAndroid) {
+    // El código viaja con la instalación (Install Referrer).
+    var destino = PLAY + (codigo ? "&referrer=" + encodeURIComponent("codigo=" + codigo) : "");
+    location.replace(destino);
+    document.getElementById("texto").innerHTML =
+        'Si no se abre solo, <a href="' + destino + '">' +
+        T('tocá acá para ir a Google Play', 'toca aquí para ir a Google Play') + '</a>.';
+    return;
+  }
+  if (codigo) {
+    document.getElementById("codigo").textContent = codigo;
+    mostrar("caja");
+    document.getElementById("copiar").onclick = function () {
+      var boton = this;
+      var listo = function () { boton.textContent = "¡Copiado!"; };
+      if (navigator.clipboard) navigator.clipboard.writeText(codigo).then(listo, listo);
+      else listo();
+    };
+  } else {
+    document.getElementById("caja").remove();
+  }
+  if (esIphone && APPLE) {
+    document.getElementById("texto").textContent =
+        T("Copiá el código y después instalá Vatio desde el App Store.",
+          "Copia el código y después instala Vatio desde el App Store.");
+    var ir = document.createElement("a");
+    ir.className = "boton"; ir.href = APPLE; ir.textContent = "Ir al App Store";
+    document.getElementById("caja") ? document.getElementById("caja").appendChild(ir)
+                                    : document.getElementById("texto").after(ir);
+    return;
+  }
+  document.getElementById("texto").textContent = esIphone
+      ? T("Vatio llega pronto al App Store. Guardá el código para cuando esté.",
+          "Vatio llega pronto al App Store. Guarda el código para cuando esté.")
+      : T("Abrí esta página desde el celular, o descargá Vatio acá:",
+          "Abre esta página desde el celular, o descarga Vatio aquí:");
+  mostrar("tiendas");
+})();
+</script>
+
+<footer><span data-tu="Vatio es una ayuda de cálculo: verifica siempre los
+resultados con la norma vigente y un profesional matriculado.">Vatio es una ayuda
+de cálculo: verificá siempre los resultados con la norma vigente y un
+profesional matriculado.</span>
+· <a href="../privacidad.html">Política de privacidad</a>
+· <a href="../../">Vatio es una app de Vectrix Labs</a></footer>
+</main>
+</body>
+</html>

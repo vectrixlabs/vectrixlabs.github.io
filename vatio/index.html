@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vatio: calculadora eléctrica para electricistas</title>
+<link rel="icon" href="icono.png">
+<link rel="stylesheet" href="estilo.css">
+<script>
+var VOS = /^es-(AR|UY|PY)$/i.test(navigator.language || "");
+function T(vos, tu) { return VOS ? vos : tu; }
+document.addEventListener("DOMContentLoaded", function () {
+  if (VOS) return;
+  document.querySelectorAll("[data-tu]").forEach(function (e) {
+    e.innerHTML = e.getAttribute("data-tu");
+  });
+});
+</script>
+</head>
+<body>
+<main>
+<div class="marca"><img src="icono.png" alt="">VATIO</div>
+<div class="de">de <a href="../">Vectrix Labs</a></div>
+
+<h1 data-tu="Calcula, arma el tablero y envía el presupuesto desde la obra">Calculá,
+armá el tablero y mandá el presupuesto desde la obra</h1>
+<p data-tu="Vatio es la caja de herramientas del electricista en el celular: cables y
+protecciones según la norma de tu país, tablero con plano unifilar, presupuesto en
+PDF con tus datos profesionales y tu tarjeta profesional con QR de WhatsApp.">Vatio
+es la caja de herramientas del electricista en el celular: cables y térmicas según
+la norma de tu país, tablero con plano unifilar, presupuesto en PDF con tu
+matrícula y tu tarjeta profesional con QR de WhatsApp.</p>
+<div class="botones"><a class="boton" href="https://play.google.com/store/apps/details?id=ar.vatio.app">Descargar en Google Play</a><span class="boton secundario">App Store: muy pronto</span></div>
+<p data-tu="Prueba Vatio Pro gratis 7 días.">Probá Vatio Pro gratis 7 días.</p>
+
+<footer><span data-tu="Vatio es una ayuda de cálculo: verifica siempre los
+resultados con la norma vigente y un profesional matriculado.">Vatio es una ayuda
+de cálculo: verificá siempre los resultados con la norma vigente y un
+profesional matriculado.</span>
+· <a href="privacidad.html">Política de privacidad</a>
+· <a href="../">Vatio es una app de Vectrix Labs</a></footer>
+</main>
+</body>
+</html>

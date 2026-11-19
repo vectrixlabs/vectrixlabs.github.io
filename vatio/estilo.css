@@ -1,0 +1,43 @@
+:root { --grafito:#111317; --panel:#1b1e25; --ambar:#ffb800; --texto:#f2f3f5;
+        --suave:#b8bcc6; }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--grafito); color:var(--texto);
+       font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
+main { max-width:720px; margin:0 auto; padding:40px 22px 60px; }
+.marca { display:flex; align-items:center; gap:12px; font-weight:800;
+         font-size:26px; letter-spacing:2px; }
+.marca img { width:52px; height:52px; }
+h1 { font-size:30px; line-height:1.2; margin:28px 0 10px; }
+h2 { font-size:20px; margin:30px 0 8px; color:var(--ambar); }
+p, li { color:var(--suave); }
+strong { color:var(--texto); }
+a { color:var(--ambar); }
+.botones { display:flex; flex-wrap:wrap; gap:12px; margin:26px 0; }
+.boton { display:inline-block; padding:13px 20px; border-radius:12px;
+         background:var(--ambar); color:#111317; font-weight:700;
+         text-decoration:none; border:0; font-size:16px; cursor:pointer; }
+.boton.secundario { background:var(--panel); color:var(--texto);
+                    border:1px solid #2c313b; }
+.codigo { background:var(--panel); border-radius:14px; padding:18px;
+          text-align:center; margin:22px 0; }
+.codigo b { display:block; font-size:30px; letter-spacing:3px;
+            color:var(--texto); margin:6px 0 12px; }
+.oculto { display:none; }
+.de { font-size:13px; color:var(--suave); margin-top:4px; }
+.de a { color:var(--suave); }
+footer { margin-top:44px; font-size:13px; color:#7d828e; }
+footer a { color:#a3a8b3; }
+.apps { display:grid; gap:14px; margin:28px 0; }
+.app { display:flex; gap:16px; align-items:flex-start; background:var(--panel);
+       border:1px solid #2c313b; border-radius:16px; padding:18px;
+       text-decoration:none; }
+.app:hover { border-color:var(--ambar); }
+.app img, .app .inicial { width:56px; height:56px; border-radius:14px;
+                          flex:none; }
+.app .inicial { display:flex; align-items:center; justify-content:center;
+                background:#2c313b; color:var(--ambar); font-weight:800;
+                font-size:24px; }
+.app b { display:block; color:var(--texto); font-size:18px; }
+.app span { color:var(--suave); }
+.logo { font-weight:800; font-size:28px; letter-spacing:4px; }
+.logo em { font-style:normal; color:var(--ambar); }

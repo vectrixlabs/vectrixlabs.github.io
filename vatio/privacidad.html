@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Política de privacidad de Vatio</title>
+<link rel="icon" href="icono.png">
+<link rel="stylesheet" href="estilo.css">
+<script>
+var VOS = /^es-(AR|UY|PY)$/i.test(navigator.language || "");
+function T(vos, tu) { return VOS ? vos : tu; }
+document.addEventListener("DOMContentLoaded", function () {
+  if (VOS) return;
+  document.querySelectorAll("[data-tu]").forEach(function (e) {
+    e.innerHTML = e.getAttribute("data-tu");
+  });
+});
+</script>
+</head>
+<body>
+<main>
+<div class="marca"><img src="icono.png" alt="">VATIO</div>
+<div class="de">de <a href="../">Vectrix Labs</a></div>
+<h1>Política de privacidad de Vatio</h1>
+<p>Última actualización: 19 de noviembre de 2026</p>
+<p>Vatio es una aplicación de herramientas de cálculo eléctrico, de Vectrix Labs. Contacto: vectrixlabs@gmail.com.</p>
+<h2>Qué datos usa la app y para qué</h2>
+<p><strong>Datos que quedan en tu teléfono.</strong> Los ajustes, los presupuestos, tus datos profesionales (nombre, oficio, matrícula, DNI o CUIT, teléfono, correo y zona de trabajo), el nombre y domicilio de tus clientes, y los proyectos de tablero se guardan sólo en tu equipo. No los enviamos a ningún servidor. Si llegaste por el cartel de una casa de electricidad, también se guarda su código. Los PDF y las imágenes de tu tarjeta se generan en tu teléfono y los compartís vos, con la app que elijas (por ejemplo WhatsApp). El código QR de tu tarjeta contiene sólo un enlace de WhatsApp con tu número.</p>
+<p><strong>Firma del cliente.</strong> Si tu cliente firma el presupuesto en la pantalla, la firma se guarda en tu teléfono junto con ese presupuesto y sólo sale en el PDF que vos compartís.</p>
+<p><strong>Copia de seguridad.</strong> Si exportás una copia de seguridad, la app arma un archivo con tus ajustes, presupuestos y datos profesionales y vos elegís dónde guardarlo (por ejemplo en tu Drive o en otra carpeta). Vatio no sube esa copia a ningún servidor.</p>
+<p><strong>Ubicación aproximada (opcional).</strong> La app sólo pide permiso de ubicación aproximada, y sólo cuando lo pedís vos:</p>
+<ul><li>Si tocás &quot;Usar mi ubicación&quot; en la comparación de precios, se usa para averiguar tu país y provincia. Sólo se guarda la zona (por ejemplo &quot;AR|Córdoba&quot;), no tus coordenadas. Para convertir la ubicación en una zona se usa el servicio de geocodificación del sistema (de Google en Android y de Apple en iPhone).</li><li>Si tocás &quot;Ver los más cercanos&quot;, se usa para ordenar los comercios por distancia. Ese cálculo se hace en tu teléfono, y la ubicación no se guarda ni se envía a ningún lado.</li></ul>
+<p>Podés negar el permiso y elegir la zona a mano. Si tocás &quot;Cómo llegar&quot;, se abre la app de mapas del teléfono (Google Maps o Apple Maps) con la dirección del comercio. Desde ahí rige la política de privacidad de esa app.</p>
+<p><strong>Compras.</strong> Las suscripciones se procesan en Google Play (Android) o en el App Store (iPhone). Vatio no recibe ni guarda los datos de tu tarjeta; sólo se entera de si tu suscripción está activa.</p>
+<h2>Datos que se usarán cuando se active el servidor de precios</h2>
+<p><em>(Esta sección entra en vigor cuando se conecte el servidor; hasta entonces la app no envía estos datos.)</em></p>
+<ul><li><strong>Tiendas:</strong> al registrarse, nombre del comercio, ciudad, teléfono, sitio web, correo de la cuenta, precios que cargan y estado de su suscripción. Se guardan en servicios de Google Firebase.</li><li><strong>Calificaciones:</strong> si calificás una tienda, se guarda tu identificador de cuenta y las estrellas que diste, para evitar votos repetidos. Las calificaciones se muestran de forma agregada.</li><li><strong>Zona de consulta:</strong> al comparar precios se envía la clave de zona, no tu ubicación.</li><li><strong>Código de recomendación:</strong> si instalaste Vatio desde el cartel de una casa de electricidad (o cargaste su código), al suscribirte se envía ese código junto con un identificador de la compra, para que la casa sume un recomendado. No se envía tu nombre ni tus datos de contacto.</li></ul>
+<h2>Lo que no hacemos</h2>
+<ul><li>No mostramos publicidad de terceros.</li><li>No vendemos tus datos.</li><li>No usamos tus datos de clientes y presupuestos para ningún fin: no salen de tu teléfono.</li></ul>
+<h2>Tus derechos</h2>
+<p>Podés borrar los datos locales desde los ajustes del teléfono (en Android: Almacenamiento → Borrar datos) o desinstalando la app. Para consultar o eliminar datos que tengamos en el servidor (cuentas de tiendas y calificaciones), escribí a vectrixlabs@gmail.com.</p>
+<h2>Menores</h2>
+<p>Vatio está pensada para profesionales y personas adultas; no está dirigida a menores de edad.</p>
+<h2>Aviso técnico</h2>
+<p>Los resultados son una ayuda de cálculo. Deben verificarse con la norma vigente y un profesional matriculado antes de ejecutar una instalación.</p>
+<h2>Cambios</h2>
+<p>Si esta política cambia, publicaremos la nueva versión en esta misma dirección con su fecha.</p>
+<footer><span data-tu="Vatio es una ayuda de cálculo: verifica siempre los
+resultados con la norma vigente y un profesional matriculado.">Vatio es una ayuda
+de cálculo: verificá siempre los resultados con la norma vigente y un
+profesional matriculado.</span>
+· <a href="privacidad.html">Política de privacidad</a>
+· <a href="../">Vatio es una app de Vectrix Labs</a></footer>
+</main>
+</body>
+</html>
